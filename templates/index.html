@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/static/flower.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    
+    <title>iris</title>
+</head>
+
+<body class="bg-dark">
+    <div class="jumbotron jumbotron-fluid bg-warning shadow">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold">iris species classifier.</h1>
+            <p class="lead font-italic">this is working on a model trained with logit.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                    <div class="container p-3">
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <form action="/" method="post">
+                        <div class="form-group">
+                            <label for="formControlRange ">sepal length</label>
+                            <span id="sepal_length_output" class="  font-weight-bold text-danger"></span>
+                            <input type="range" min="4.3" max="7.9" step="0.1" value="5.8" class="form-control-range" id="sepal_length" name="sepal_length">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formControlRange">sepal width</label>
+                            <span id="sepal_width_output" class="  font-weight-bold text-danger"></span>
+                            <input type="range" min="2.0" max="4.4" step="0.1" value="3.0" class="form-control-range" id="sepal_width" name="sepal_width">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formControlRange">petal length</label>
+                            <span id="petal_length_output" class="  font-weight-bold text-danger"></span>
+                            <input type="range" min="1.0" max="6.9" step="0.1" value="4.3" class="form-control-range" id="petal_length" name="petal_length">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formControlRange">petal width</label>
+                            <span id="petal_width_output" class="  font-weight-bold text-danger"></span>
+                            <input type="range" min="0.1" max="2.5" step="0.1" value="1.3" class="form-control-range" id="petal_width" name="petal_width">
+                        </div>
+                        <div class="text-right"><button type="submit" class="btn btn-primary">Submit</button></div>
+                        
+                    </form>
+
+                </div></div>
+
+            </div>
+
+            <div class="col-sm-4">
+
+                <div class="container p-3">
+
+                    {% if pred%}
+                    <div class="shadow p-3 mb-5 bg-white rounded">
+                        <h3 id="prediction" class="  font-weight-bold text-danger text-center"> {{pred}}</h3>
+
+                        <ul class="list-group">
+                            {% for key,value in data.items() %}
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                {{key}}
+                                <span class="badge badge-primary badge-pill">{{value}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/main.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>
