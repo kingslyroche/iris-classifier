@@ -2,7 +2,9 @@
 
 A simple logistics regression model deployed as a web app
 
-http://iris.ap-south-1.elasticbeanstalk.com/
+
+
+https://iris-classifier-logit.herokuapp.com/
 
 
 ------------------------------------------------------------------------------
