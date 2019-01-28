@@ -5,8 +5,6 @@ from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.preprocessing import PolynomialFeatures, StandardScaler
-import warnings
-warnings.filterwarnings('ignore')
 
 RANDOM_SEED = 17 # because it's the most popular random number between 1 and 20
 
