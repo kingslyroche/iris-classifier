@@ -1,9 +1,9 @@
 from flask import Flask,render_template,request
 from joblib import dump, load
 import numpy as np
-import warnings
+
 from werkzeug import datastructures
-warnings.filterwarnings('ignore')
+
 
 model=load('iris.joblib')
 
