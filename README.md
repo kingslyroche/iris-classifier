@@ -1,6 +1,6 @@
 # iris-classifier
 
-A simple logistics regression model deployed as a web app
+A simple logistics regression model deployed as a  Flask web app
 
 
 
